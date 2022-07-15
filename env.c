@@ -6,30 +6,41 @@
 /*   By: jgoldste <jgoldste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/15 19:05:05 by jgoldste          #+#    #+#             */
-/*   Updated: 2022/07/15 19:05:55 by jgoldste         ###   ########.fr       */
+/*   Updated: 2022/07/16 01:49:51 by jgoldste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
 
-t_mini	*init_node_mini_env(char **env, int i)
+void	print_env(t_mini *mini_env)
+{
+	t_mini	*fix;
+
+	fix = mini_env;
+	while (mini_env)
+	{
+		printf("%s=%s\n", mini_env->key, mini_env->value);
+		mini_env = mini_env->next;
+	}
+	mini_env = fix;
+}
+
+t_mini	*init_node_mini_env(char *env)
 {
 	t_mini	*node_env;
-	char	**str_env;
+	int		delim;
 
+	delim = 0;
 	node_env = (t_mini *)malloc(sizeof(t_mini));
 	if (!node_env)
 		return (NULL);
-	str_env = ft_split(env[i], '=');
-	if (!str_env)
-	{
-		free(node_env);
-		return (NULL);
-	}
-	node_env->key = str_env[0];
-	node_env->value = str_env[1];
+	while (env[delim] != '=' && env[delim])
+		delim++;
+	node_env->key = ft_substr(env, 0, delim);
+	node_env->value = ft_substr(env, delim + 1, ft_strlen(env) - delim + 1);
 	node_env->next = NULL;
-	free(str_env);
+	if (!node_env->key && !node_env->value)
+		return (NULL);
 	return (node_env);
 }
 
@@ -41,9 +52,9 @@ t_mini	*save_env(char **env, int i)
 
 	mini_env = NULL;
 	node_last = NULL;
-	while (env[++i])
+	while (env[i])
 	{
-		node_env = init_node_mini_env(env, i);
+		node_env = init_node_mini_env(env[i++]);
 		if (!node_env)
 			if (!free_mini_list(mini_env))
 				return (NULL);

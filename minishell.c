@@ -6,11 +6,16 @@
 /*   By: jgoldste <jgoldste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 15:55:28 by jgoldste          #+#    #+#             */
-/*   Updated: 2022/07/15 19:05:41 by jgoldste         ###   ########.fr       */
+/*   Updated: 2022/07/16 01:49:46 by jgoldste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
+
+// void	minishell()
+// {
+	
+// }
 
 int	main(int argc, char **argv, char **env)
 {
@@ -18,18 +23,9 @@ int	main(int argc, char **argv, char **env)
 
 	(void)argc;
 	(void)argv;
-	mini_env = save_env(env, -1);
+	mini_env = save_env(env, 0);
 	if (!mini_env)
 		return (printf("ENV parse error\n"));
+	print_env(mini_env);
 	return (free_mini_list(mini_env));
 }
-
-
-	// t_mini	*fix;
-	// fix = mini_env;
-	// while (mini_env)
-	// {
-	// 	printf("%s=%s\n", mini_env->key, mini_env->value);
-	// 	mini_env = mini_env->next;
-	// }
-	// mini_env = fix;
