@@ -16,11 +16,13 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # PARTICULAR PURPOSE.
 
 # This program built for i386-apple-darwin11.3.0
+ 
 
-# Make data base, printed on Fri Jul 15 22:44:34 2022
+# Make data base, printed on Sun Jul 17 16:37:40 2022
 
 # Variables
 
+ 
 # automatic
 <D = $(patsubst %/,%,$(dir $<))
 # automatic
@@ -54,7 +56,7 @@ VSCODE_VERBOSE_LOGGING = true
 # environment
 __CFBundleIdentifier = com.microsoft.VSCode
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /var/folders/zz/zyxvpxvq6csfxvn_n003vp7r00yxjy/T/vscode-ipc-df920be8-8b28-4bee-b138-c6c67cc4e59e.sock
+VSCODE_IPC_HOOK_EXTHOST = /var/folders/zz/zyxvpxvq6csfxvn_n003vp7r00yxjy/T/vscode-ipc-c7400775-4f6e-46be-89fb-326cfe57bb23.sock
 # environment
 VSCODE_CWD = /
 # environment
@@ -72,7 +74,7 @@ ELECTRON_RUN_AS_NODE = 1
 # default
 .FEATURES := target-specific order-only second-expansion else-if archives jobserver check-symlink
 # environment
-SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.RuFpkBQJQA/Listeners
+SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.kv2mFyFpSo/Listeners
 # environment
 CPLUS_INCLUDE_PATH = /usr/local/include/
 # automatic
@@ -140,7 +142,7 @@ MFLAGS = -Rrqp
 # automatic
 *D = $(patsubst %/,%,$(dir $*))
 # environment
-XPC_SERVICE_NAME = application.com.microsoft.VSCode.1754046.1754250
+XPC_SERVICE_NAME = application.com.microsoft.VSCode.1640020.1640222
 # automatic
 +D = $(patsubst %/,%,$(dir $+))
 # makefile (from `Makefile', line 43)
@@ -171,8 +173,9 @@ D_FILES = $(patsubst %.c,%.d,$(SRCS))
 MAKELEVEL := 1
 # environment
 LANG = C
+ 
 # environment
-VSCODE_PID = 55081
+VSCODE_PID = 84634
 # variable set hash-table stats:
 # Load=76/1024=7%, Rehash=0, Collisions=6/108=6%
 
@@ -286,6 +289,7 @@ ft_strlen.o: ft_strlen.c libft.h
 
 # Not a target:
 ft_memmove.c:
+ 
 #  Implicit rule search has been done.
 #  Last modified 2022-07-01 15:54:15
 #  File has been updated.
@@ -295,7 +299,6 @@ ft_memmove.c:
 
 ft_isdigit.o: ft_isdigit.c libft.h
 #  Implicit rule search has been done.
- 
 #  Implicit/static pattern stem: `ft_isdigit'
 #  Last modified 2022-07-14 21:44:34
 #  File has been updated.
@@ -555,6 +558,7 @@ ft_itoa.c:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
 # Not a target:
+ 
 ft_memcmp.c:
 #  Implicit rule search has been done.
 #  Last modified 2022-07-01 15:54:15
@@ -566,7 +570,6 @@ ft_memcmp.c:
 # Not a target:
 ft_strlen.c:
 #  Implicit rule search has been done.
- 
 #  Last modified 2022-07-01 15:54:15
 #  File has been updated.
 #  Successfully updated.
@@ -714,6 +717,7 @@ ft_isalpha.o: ft_isalpha.c libft.h
 
 # Not a target:
 .DEFAULT:
+ 
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -836,6 +840,7 @@ ft_memmove.o: ft_memmove.c libft.h
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 #  commands to execute (from `Makefile', line 55):
+ 
 	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@ -MD
 	
 
@@ -852,7 +857,6 @@ ft_strchr.o: ft_strchr.c libft.h
 	
 
 ft_toupper.o: ft_toupper.c libft.h
- 
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `ft_toupper'
 #  Last modified 2022-07-14 21:44:35
@@ -1018,11 +1022,11 @@ ft_putendl_fd.o: ft_putendl_fd.c libft.h
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Fri Jul 15 22:44:34 2022
+# Finished Make data base on Sun Jul 17 16:37:40 2022
 
  
 
-# Make data base, printed on Fri Jul 15 22:44:34 2022
+# Make data base, printed on Sun Jul 17 16:37:40 2022
 
 # Variables
 
@@ -1059,7 +1063,7 @@ VSCODE_VERBOSE_LOGGING = true
 # environment
 __CFBundleIdentifier = com.microsoft.VSCode
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /var/folders/zz/zyxvpxvq6csfxvn_n003vp7r00yxjy/T/vscode-ipc-df920be8-8b28-4bee-b138-c6c67cc4e59e.sock
+VSCODE_IPC_HOOK_EXTHOST = /var/folders/zz/zyxvpxvq6csfxvn_n003vp7r00yxjy/T/vscode-ipc-c7400775-4f6e-46be-89fb-326cfe57bb23.sock
 # environment
 VSCODE_CWD = /
 # environment
@@ -1079,7 +1083,8 @@ LIB = ./libft/libft.a
 # default
 .FEATURES := target-specific order-only second-expansion else-if archives jobserver check-symlink
 # environment
-SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.RuFpkBQJQA/Listeners
+ 
+SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.kv2mFyFpSo/Listeners
 # environment
 CPLUS_INCLUDE_PATH = /usr/local/include/
 # automatic
@@ -1149,7 +1154,7 @@ MFLAGS = -Rrqp
 # automatic
 *D = $(patsubst %/,%,$(dir $*))
 # environment
-XPC_SERVICE_NAME = application.com.microsoft.VSCode.1754046.1754250
+XPC_SERVICE_NAME = application.com.microsoft.VSCode.1640020.1640222
 # automatic
 +D = $(patsubst %/,%,$(dir $+))
 # makefile (from `Makefile', line 33)
@@ -1181,9 +1186,9 @@ MAKELEVEL := 0
 # environment
 LANG = C
 # environment
-VSCODE_PID = 55081
+VSCODE_PID = 84634
 # variable set hash-table stats:
-# Load=78/1024=8%, Rehash=0, Collisions=6/118=5%
+# Load=78/1024=8%, Rehash=0, Collisions=6/113=5%
 
 # Pattern-specific Variable Values
 
@@ -1191,9 +1196,9 @@ VSCODE_PID = 55081
 
 # Directories
 
-# . (device 16777230, inode 118969): 19 files, no impossibilities.
+# . (device 16777230, inode 118969): 23 files, no impossibilities.
 
-# 19 files, no impossibilities in 1 directories.
+# 23 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -1212,14 +1217,23 @@ all: libft minishell
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has been updated.
-#  Needs to be updated (-q is set).
+#  Successfully updated.
 # variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/10=0%
+# Load=0/32=0%, Rehash=0, Collisions=0/5=0%
 
 .PHONY: all libft clean fclean re
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
+
+# Not a target:
+free_utils.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-07-16 01:45:21
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
 libft:
 #  Phony target (prerequisite of .PHONY).
@@ -1266,18 +1280,34 @@ Makefile:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
 # Not a target:
-error.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+env.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-07-16 01:49:51
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+error.o: error.c minishell.h
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `error'
+#  Last modified 2022-07-16 01:49:53
+#  File has been updated.
+ 
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 45):
+	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@ -MD
+	
 
 minishell: minishell.o env.o free_utils.o error.o libft/libft.a
 #  Implicit rule search has not been done.
-#  Last modified 2022-07-15 19:01:23
+#  Last modified 2022-07-16 01:49:53
 #  File has been updated.
-#  Needs to be updated (-q is set).
+#  Successfully updated.
 # variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/5=0%
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 #  commands to execute (from `Makefile', line 48):
 	$(CC) $(CFLAGS) $(INCLUDES) $(LIB) -o $(NAME) $(OBJS)
 	@echo ${GREEN} "\n\tMinishell is compiled\n" ${END}
@@ -1286,36 +1316,23 @@ minishell: minishell.o env.o free_utils.o error.o libft/libft.a
 minishell.o: minishell.c minishell.h
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `minishell'
-#  Last modified 2022-07-15 19:01:22
+#  Last modified 2022-07-16 01:49:53
 #  File has been updated.
-#  Needs to be updated (-q is set).
-# automatic
-# @ := minishell.o
-# automatic
-# % := 
-# automatic
-# * := minishell
-# automatic
-# + := minishell.c minishell.h
-# automatic
-# | := 
-# automatic
-# < := minishell.c
-# automatic
-# ^ := minishell.c minishell.h
-# automatic
-# ? := minishell.c minishell.h
+#  Successfully updated.
 # variable set hash-table stats:
-# Load=8/32=25%, Rehash=0, Collisions=1/15=7%
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 #  commands to execute (from `Makefile', line 45):
 	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@ -MD
 	
 
 # Not a target:
 libft/libft.a:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+#  Implicit rule search has been done.
+#  Last modified 2022-07-14 21:44:38
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
 fclean: clean
 #  Phony target (prerequisite of .PHONY).
@@ -1347,44 +1364,65 @@ clean:
 #  File has not been updated.
 #  commands to execute (from `Makefile', line 51):
 	@$(RM) $(OBJS) $(D_FILES)
- 
 	@$(MAKE) -C $(dir $(LIB)) clean
 	@echo ${YELLOW} "\n\tMinishell 'clean' status: DONE\n" ${END}
 	
 
 # Not a target:
-minishell.c:
+error.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-07-15 22:31:39
+#  Last modified 2022-07-15 19:03:53
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
 # Not a target:
-free_utils.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+minishell.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-07-16 01:49:46
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+free_utils.o: free_utils.c minishell.h
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `free_utils'
+#  Last modified 2022-07-16 01:49:53
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 45):
+	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@ -MD
+	
 
 # Not a target:
 minishell.h:
 #  Implicit rule search has been done.
-#  Last modified 2022-07-15 22:31:31
+#  Last modified 2022-07-16 01:48:11
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
-# Not a target:
-env.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+env.o: env.c minishell.h
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `env'
+#  Last modified 2022-07-16 01:49:53
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 45):
+	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@ -MD
+	
 
 # files hash-table stats:
-# Load=17/1024=2%, Rehash=0, Collisions=0/51=0%
+# Load=20/1024=2%, Rehash=0, Collisions=0/69=0%
 # VPATH Search Paths
+ 
 
 # No `vpath' search paths.
 
@@ -1395,6 +1433,6 @@ env.o:
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Fri Jul 15 22:44:34 2022
+# Finished Make data base on Sun Jul 17 16:37:40 2022
 
  

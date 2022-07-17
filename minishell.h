@@ -6,7 +6,7 @@
 /*   By: jgoldste <jgoldste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 15:56:11 by jgoldste          #+#    #+#             */
-/*   Updated: 2022/07/16 01:48:11 by jgoldste         ###   ########.fr       */
+/*   Updated: 2022/07/17 19:49:15 by jgoldste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,13 +26,24 @@ typedef struct s_mini
 	struct s_mini	*next;
 }	t_mini;
 
+typedef struct s_shell
+{
+	t_mini          *mini_env;
+	char			**path_array;
+	char			*mini_pwd;
+	char            *mini_oldpwd;
+	char            *mini_home;
+	char            *mini_shlvl;
+}	t_shell;
+
 //env.c
 t_mini	*save_env(char **env, int i);
 t_mini	*init_node_mini_env(char *env);
 void	print_env(t_mini *mini_env);
 
 //free_utils.c
-void	free_array(void **array);
+int		free_array(void **array);
 int		free_mini_list(t_mini *node);
+int		free_minishell(t_shell *minishell);
 
 #endif
