@@ -6,7 +6,7 @@
 /*   By: jgoldste <jgoldste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 15:56:11 by jgoldste          #+#    #+#             */
-/*   Updated: 2022/07/17 19:49:15 by jgoldste         ###   ########.fr       */
+/*   Updated: 2022/07/17 20:34:15 by jgoldste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,11 @@ typedef struct s_shell
 	char            *mini_home;
 	char            *mini_shlvl;
 }	t_shell;
+
+//init.c
+char	**save_path();
+t_shell	*init_minishell(t_mini *mini_env, char **path_array);
+char	*find_list(t_mini *mini_env, char *key, size_t len);
 
 //env.c
 t_mini	*save_env(char **env, int i);

@@ -6,13 +6,13 @@
 #    By: jgoldste <jgoldste@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/01 15:56:29 by jgoldste          #+#    #+#              #
-#    Updated: 2022/07/15 19:07:25 by jgoldste         ###   ########.fr        #
+#    Updated: 2022/07/17 20:32:29 by jgoldste         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		=	minishell
 
-SRCS		=	minishell.c		env.c	free_utils.c	error.c
+SRCS		=	minishell.c		init.c		env.c	free_utils.c	error.c
 
 HEADER		=	minishell.h
 

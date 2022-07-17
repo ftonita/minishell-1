@@ -1,53 +1,14 @@
-make --dry-run --always-make --keep-going --print-directory
+make --dry-run --keep-going --print-directory
 make: Entering directory `/Users/jgoldste/projects/minishell/minishell_work'
 /Applications/Xcode.app/Contents/Developer/usr/bin/make -C ./libft/
  
 make[1]: Entering directory `/Users/jgoldste/projects/minishell/minishell_work/libft'
-gcc -Wall -Wextra -Werror -I. -c ft_isalpha.c -o ft_isalpha.o -MD
-gcc -Wall -Wextra -Werror -I. -c ft_isdigit.c -o ft_isdigit.o -MD
-gcc -Wall -Wextra -Werror -I. -c ft_isalnum.c -o ft_isalnum.o -MD
-gcc -Wall -Wextra -Werror -I. -c ft_isascii.c -o ft_isascii.o -MD
-gcc -Wall -Wextra -Werror -I. -c ft_isprint.c -o ft_isprint.o -MD
-gcc -Wall -Wextra -Werror -I. -c ft_strlen.c -o ft_strlen.o -MD
-gcc -Wall -Wextra -Werror -I. -c ft_memset.c -o ft_memset.o -MD
-gcc -Wall -Wextra -Werror -I. -c ft_bzero.c -o ft_bzero.o -MD
-gcc -Wall -Wextra -Werror -I. -c ft_memcpy.c -o ft_memcpy.o -MD
-gcc -Wall -Wextra -Werror -I. -c ft_memmove.c -o ft_memmove.o -MD
+make[1]: Nothing to be done for `all'.
  
-gcc -Wall -Wextra -Werror -I. -c ft_strlcpy.c -o ft_strlcpy.o -MD
-gcc -Wall -Wextra -Werror -I. -c ft_strlcat.c -o ft_strlcat.o -MD
-gcc -Wall -Wextra -Werror -I. -c ft_toupper.c -o ft_toupper.o -MD
- 
-gcc -Wall -Wextra -Werror -I. -c ft_tolower.c -o ft_tolower.o -MD
-gcc -Wall -Wextra -Werror -I. -c ft_strchr.c -o ft_strchr.o -MD
- 
-gcc -Wall -Wextra -Werror -I. -c ft_strrchr.c -o ft_strrchr.o -MD
-gcc -Wall -Wextra -Werror -I. -c ft_strncmp.c -o ft_strncmp.o -MD
-gcc -Wall -Wextra -Werror -I. -c ft_memchr.c -o ft_memchr.o -MD
-gcc -Wall -Wextra -Werror -I. -c ft_memcmp.c -o ft_memcmp.o -MD
-gcc -Wall -Wextra -Werror -I. -c ft_strnstr.c -o ft_strnstr.o -MD
-gcc -Wall -Wextra -Werror -I. -c ft_atoi.c -o ft_atoi.o -MD
-gcc -Wall -Wextra -Werror -I. -c ft_calloc.c -o ft_calloc.o -MD
-gcc -Wall -Wextra -Werror -I. -c ft_strdup.c -o ft_strdup.o -MD
-gcc -Wall -Wextra -Werror -I. -c ft_substr.c -o ft_substr.o -MD
-gcc -Wall -Wextra -Werror -I. -c ft_strjoin.c -o ft_strjoin.o -MD
-gcc -Wall -Wextra -Werror -I. -c ft_strtrim.c -o ft_strtrim.o -MD
-gcc -Wall -Wextra -Werror -I. -c ft_split.c -o ft_split.o -MD
-gcc -Wall -Wextra -Werror -I. -c ft_itoa.c -o ft_itoa.o -MD
-gcc -Wall -Wextra -Werror -I. -c ft_strmapi.c -o ft_strmapi.o -MD
-gcc -Wall -Wextra -Werror -I. -c ft_striteri.c -o ft_striteri.o -MD
-gcc -Wall -Wextra -Werror -I. -c ft_putchar_fd.c -o ft_putchar_fd.o -MD
-gcc -Wall -Wextra -Werror -I. -c ft_putstr_fd.c -o ft_putstr_fd.o -MD
-gcc -Wall -Wextra -Werror -I. -c ft_putendl_fd.c -o ft_putendl_fd.o -MD
-gcc -Wall -Wextra -Werror -I. -c ft_putnbr_fd.c -o ft_putnbr_fd.o -MD
-ar rcs libft.a ft_isalpha.o ft_isdigit.o ft_isalnum.o ft_isascii.o ft_isprint.o ft_strlen.o ft_memset.o ft_bzero.o ft_memcpy.o ft_memmove.o ft_strlcpy.o ft_strlcat.o ft_toupper.o ft_tolower.o ft_strchr.o ft_strrchr.o ft_strncmp.o ft_memchr.o ft_memcmp.o ft_strnstr.o ft_atoi.o ft_calloc.o ft_strdup.o ft_substr.o ft_strjoin.o ft_strtrim.o ft_split.o ft_itoa.o ft_strmapi.o ft_striteri.o ft_putchar_fd.o ft_putstr_fd.o ft_putendl_fd.o ft_putnbr_fd.o
-echo "\033[1;32m" "\n\tLibft is compiled\n" "\033[0m"
 make[1]: Leaving directory `/Users/jgoldste/projects/minishell/minishell_work/libft'
 gcc -Wall -Wextra -Werror -g -I. -c minishell.c -o minishell.o -MD
-gcc -Wall -Wextra -Werror -g -I. -c env.c -o env.o -MD
-gcc -Wall -Wextra -Werror -g -I. -c free_utils.c -o free_utils.o -MD
-gcc -Wall -Wextra -Werror -g -I. -c error.c -o error.o -MD
-gcc -Wall -Wextra -Werror -g -I. ./libft/libft.a -o minishell minishell.o env.o free_utils.o error.o
+gcc -Wall -Wextra -Werror -g -I. -c init.c -o init.o -MD
+gcc -Wall -Wextra -Werror -g -I. ./libft/libft.a -o minishell minishell.o init.o env.o free_utils.o error.o
 echo "\033[1;32m" "\n\tMinishell is compiled\n" "\033[0m"
 make: Leaving directory `/Users/jgoldste/projects/minishell/minishell_work'
  
