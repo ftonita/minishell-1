@@ -1,27 +1,33 @@
 make --dry-run --keep-going --print-directory
 make: Entering directory `/Users/jgoldste/projects/minishell/minishell_work'
+mkdir -p object/parser
+gcc -Wall -Wextra -Werror -g -fPIE -I./includes/ -I./gnl/ -I./libft/ -g -c -o object/parser/parser.o parser/parser.c -MD
 mkdir -p object/sources
-clang -Wall -Wextra -Werror -g -fPIE -I./includes/ -I./gnl/ -I./libft/ -g -c -o object/sources/cd.o sources/cd.c
+gcc -Wall -Wextra -Werror -g -fPIE -I./includes/ -I./gnl/ -I./libft/ -g -c -o object/sources/cd.o sources/cd.c -MD
  
 mkdir -p object/sources
-clang -Wall -Wextra -Werror -g -fPIE -I./includes/ -I./gnl/ -I./libft/ -g -c -o object/sources/init.o sources/init.c
+gcc -Wall -Wextra -Werror -g -fPIE -I./includes/ -I./gnl/ -I./libft/ -g -c -o object/sources/init.o sources/init.c -MD
 mkdir -p object/sources
-clang -Wall -Wextra -Werror -g -fPIE -I./includes/ -I./gnl/ -I./libft/ -g -c -o object/sources/env.o sources/env.c
- 
+gcc -Wall -Wextra -Werror -g -fPIE -I./includes/ -I./gnl/ -I./libft/ -g -c -o object/sources/env.o sources/env.c -MD
 mkdir -p object/sources
-clang -Wall -Wextra -Werror -g -fPIE -I./includes/ -I./gnl/ -I./libft/ -g -c -o object/sources/free_utils.o sources/free_utils.c
- 
+gcc -Wall -Wextra -Werror -g -fPIE -I./includes/ -I./gnl/ -I./libft/ -g -c -o object/sources/free_utils.o sources/free_utils.c -MD
 mkdir -p object/sources
-clang -Wall -Wextra -Werror -g -fPIE -I./includes/ -I./gnl/ -I./libft/ -g -c -o object/sources/error.o sources/error.c
+gcc -Wall -Wextra -Werror -g -fPIE -I./includes/ -I./gnl/ -I./libft/ -g -c -o object/sources/error.o sources/error.c -MD
 mkdir -p object/gnl
-clang -Wall -Wextra -Werror -g -fPIE -I./includes/ -I./gnl/ -I./libft/ -g -c -o object/gnl/get_next_line.o gnl/get_next_line.c
+gcc -Wall -Wextra -Werror -g -fPIE -I./includes/ -I./gnl/ -I./libft/ -g -c -o object/gnl/get_next_line.o gnl/get_next_line.c -MD
+ 
 mkdir -p object/gnl
-clang -Wall -Wextra -Werror -g -fPIE -I./includes/ -I./gnl/ -I./libft/ -g -c -o object/gnl/get_next_line_utils.o gnl/get_next_line_utils.c
+gcc -Wall -Wextra -Werror -g -fPIE -I./includes/ -I./gnl/ -I./libft/ -g -c -o object/gnl/get_next_line_utils.o gnl/get_next_line_utils.c -MD
 mkdir -p object
-clang -Wall -Wextra -Werror -g -fPIE -I./includes/ -I./gnl/ -I./libft/ -g -c -o object/main.o main.c
-echo "Linking..."
-make -C ./libft/
-clang object/sources/cd.o object/sources/init.o object/sources/env.o object/sources/free_utils.o object/sources/error.o object/gnl/get_next_line.o object/gnl/get_next_line_utils.o object/main.o -o minishell libft/libft.a -ltermcap -lreadline
  
+gcc -Wall -Wextra -Werror -g -fPIE -I./includes/ -I./gnl/ -I./libft/ -g -c -o object/main.o main.c -MD
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C libft/
+ 
+make[1]: Entering directory `/Users/jgoldste/projects/minishell/minishell_work/libft'
+make[1]: Nothing to be done for `all'.
+make[1]: Leaving directory `/Users/jgoldste/projects/minishell/minishell_work/libft'
+ 
+gcc object/parser/parser.o object/sources/cd.o object/sources/init.o object/sources/env.o object/sources/free_utils.o object/sources/error.o object/gnl/get_next_line.o object/gnl/get_next_line_utils.o object/main.o -o minishell libft/libft.a -ltermcap -lreadline
+echo "\033[1;32m" "\n\tMinishell is compiled\n" "\033[0m"
 make: Leaving directory `/Users/jgoldste/projects/minishell/minishell_work'
  

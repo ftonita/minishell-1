@@ -6,7 +6,7 @@
 /*   By: jgoldste <jgoldste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 15:56:11 by jgoldste          #+#    #+#             */
-/*   Updated: 2022/07/19 04:13:47 by jgoldste         ###   ########.fr       */
+/*   Updated: 2022/07/20 01:02:25 by jgoldste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,12 +28,13 @@ typedef struct s_mini
 
 typedef struct s_shell
 {
-	t_mini          *mini_env;
-	char			**path_array;
-	char			*mini_pwd;
-	char            *mini_oldpwd;
-	char            *mini_home;
-	char            *mini_shlvl;
+	t_mini	*tocken;
+	t_mini	*mini_env;
+	char	**path_array;
+	char	*mini_pwd;
+	char	*mini_oldpwd;
+	char	*mini_home;
+	char	*mini_shlvl;
 }	t_shell;
 
 //init.c
@@ -53,5 +54,8 @@ int	cd(char *cd_path);
 int		free_array(void **array);
 int		free_mini_list(t_mini *node);
 int		free_minishell(t_shell *minishell);
+
+//parser.c
+void	read_loop(t_shell *minishell);
 
 #endif

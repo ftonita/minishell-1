@@ -6,7 +6,7 @@
 /*   By: jgoldste <jgoldste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/17 20:32:49 by jgoldste          #+#    #+#             */
-/*   Updated: 2022/07/17 20:41:31 by jgoldste         ###   ########.fr       */
+/*   Updated: 2022/07/19 22:30:40 by jgoldste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,7 @@ t_shell	*init_minishell(t_mini *mini_env, char **path_array)
 	minishell = (t_shell *)malloc(sizeof(t_shell));
 	if (!minishell)
 		return (NULL);
+	minishell->tocken = NULL;
 	minishell->mini_env = mini_env;
 	minishell->path_array = path_array;
 	minishell->mini_pwd = find_list(mini_env, "PWD", 3);

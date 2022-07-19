@@ -6,7 +6,7 @@
 /*   By: jgoldste <jgoldste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/04 18:38:24 by jgoldste          #+#    #+#             */
-/*   Updated: 2022/07/17 20:30:41 by jgoldste         ###   ########.fr       */
+/*   Updated: 2022/07/20 01:26:24 by jgoldste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,8 @@ int	free_mini_list(t_mini *node)
 		if (tmp->value)
 			free(tmp->value);
 		free(tmp);
+		tmp = NULL;
 	}
-	node = NULL;
 	return (0);
 }
 
@@ -46,6 +46,8 @@ int	free_minishell(t_shell *minishell)
 {
 	if (minishell)
 	{
+		if (minishell->tocken)
+			free_mini_list(minishell->tocken);
 		if (minishell->mini_env)
 			free_mini_list(minishell->mini_env);
 		if (minishell->path_array)

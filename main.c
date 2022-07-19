@@ -6,20 +6,11 @@
 /*   By: jgoldste <jgoldste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 15:55:28 by jgoldste          #+#    #+#             */
-/*   Updated: 2022/07/19 02:54:54 by jgoldste         ###   ########.fr       */
+/*   Updated: 2022/07/19 23:16:29 by jgoldste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
-
-// void	read_loop(t_shell *minishell)
-// {
-// 	char *str;
-// 	(void)minishell;
-	
-// 	str = readline("minishell->$ ");
-// 	printf("%s\n", str);	
-// }
 
 int	main(int argc, char **argv, char **env)
 {
@@ -56,6 +47,6 @@ int	main(int argc, char **argv, char **env)
 	// printf("SHLVL=%s\n", minishell->mini_shlvl);
 	// printf("\n");
 	//*
-	// read_loop(minishell);
+	read_loop(minishell);
 	return (free_minishell(minishell));
 }
