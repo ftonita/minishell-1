@@ -1,20 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   minishell.c                                        :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jgoldste <jgoldste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 15:55:28 by jgoldste          #+#    #+#             */
-/*   Updated: 2022/07/17 20:44:49 by jgoldste         ###   ########.fr       */
+/*   Updated: 2022/07/19 02:54:54 by jgoldste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
 
-// void	minishell()
+// void	read_loop(t_shell *minishell)
 // {
+// 	char *str;
+// 	(void)minishell;
 	
+// 	str = readline("minishell->$ ");
+// 	printf("%s\n", str);	
 // }
 
 int	main(int argc, char **argv, char **env)
@@ -39,18 +43,19 @@ int	main(int argc, char **argv, char **env)
 		return (printf("Directories not found, return value [%d]\n",
 			free_minishell(minishell) + 1));
 	//*
-	printf("\n\t!!!MINISHELL!!!\n");
-	printf("\n\t[PATH]\n");
-	for (int i = 0; minishell->path_array[i]; i++)
-		printf("%s\n", minishell->path_array[i]);
-	printf("\n\t[ENV]\n");
-	print_env(minishell->mini_env);
-	printf("\n\t[DIRECTORIES]\n");
-	printf("PWD=%s\n", minishell->mini_pwd);
-	printf("OLDPWD=%s\n", minishell->mini_oldpwd);
-	printf("HOME=%s\n", minishell->mini_home);
-	printf("SHLVL=%s\n", minishell->mini_shlvl);
-	printf("\n");
+	// printf("\n\t!!!MINISHELL!!!\n");
+	// printf("\n\t[PATH]\n");
+	// for (int i = 0; minishell->path_array[i]; i++)
+	// 	printf("%s\n", minishell->path_array[i]);
+	// printf("\n\t[ENV]\n");
+	// print_env(minishell->mini_env);
+	// printf("\n\t[DIRECTORIES]\n");
+	// printf("PWD=%s\n", minishell->mini_pwd);
+	// printf("OLDPWD=%s\n", minishell->mini_oldpwd);
+	// printf("HOME=%s\n", minishell->mini_home);
+	// printf("SHLVL=%s\n", minishell->mini_shlvl);
+	// printf("\n");
 	//*
+	// read_loop(minishell);
 	return (free_minishell(minishell));
 }

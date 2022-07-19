@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: jgoldste <jgoldste@student.21-school.ru    +#+  +:+       +#+         #
+#    By: jgoldste <jgoldste@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/28 02:40:24 by jgoldste          #+#    #+#              #
-#    Updated: 2022/01/26 19:38:16 by jgoldste         ###   ########.fr        #
+#    Updated: 2022/07/19 02:55:18 by jgoldste         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,7 +33,7 @@ D_FILES				=	$(patsubst %.c,%.d,$(SRCS))
 
 INCLUDES			=	-I.
 
-CFLAGS				=	-Wall -Wextra -Werror
+CFLAGS				=	-Wall -Wextra -Werror -g
 
 CC					=	gcc
 

@@ -6,7 +6,7 @@
 /*   By: jgoldste <jgoldste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 15:56:11 by jgoldste          #+#    #+#             */
-/*   Updated: 2022/07/17 20:34:15 by jgoldste         ###   ########.fr       */
+/*   Updated: 2022/07/19 04:13:47 by jgoldste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include <stdio.h>
 # include <stdlib.h>
-# include "./libft/libft.h"
+# include "libft.h"
 # include <readline/readline.h>
 # include <readline/history.h>
 
@@ -45,6 +45,9 @@ char	*find_list(t_mini *mini_env, char *key, size_t len);
 t_mini	*save_env(char **env, int i);
 t_mini	*init_node_mini_env(char *env);
 void	print_env(t_mini *mini_env);
+
+//cd.c
+int	cd(char *cd_path);
 
 //free_utils.c
 int		free_array(void **array);
