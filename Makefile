@@ -6,7 +6,7 @@
 #    By: jgoldste <jgoldste@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/01 15:56:29 by jgoldste          #+#    #+#              #
-#    Updated: 2022/07/19 23:11:20 by jgoldste         ###   ########.fr        #
+#    Updated: 2022/07/22 04:31:18 by jgoldste         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,7 @@ CFLAGS		:=	-Wall -Wextra -Werror -g -fPIE
 LIB			:=	libft/libft.a
 LFLAGS		:=	-ltermcap -lreadline
 
-EXECUTE_SRC	=	cd.c	init.c		env.c	free_utils.c	error.c
+EXECUTE_SRC	=	cd.c	init.c		env.c	history.c	free_utils.c	error.c
 
 PARSER_SRC	=	parser.c
 

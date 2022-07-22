@@ -6,7 +6,7 @@
 /*   By: jgoldste <jgoldste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/19 23:12:25 by jgoldste          #+#    #+#             */
-/*   Updated: 2022/07/20 02:51:18 by jgoldste         ###   ########.fr       */
+/*   Updated: 2022/07/22 04:15:16 by jgoldste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,10 +29,8 @@ int mini_parser(t_shell *minishell, char *line)
 	node->key = tocken_arr[0];
 	node->value = tocken_arr[1];
 	node->next = NULL;
-	printf("\t%s\n\t%s\n\t%p\n", node->key, node->value, node->next);
+	free((void **)tocken_arr);
 	minishell->tocken = node;
-	printf("TOCKEN ADDRESS: %p\n", minishell->tocken);
-	printf("\t%s\n\t%s\n\t%p\n", minishell->tocken->key, minishell->tocken->value, minishell->tocken->next);
 	return (0);
 }
 
@@ -42,16 +40,16 @@ void	read_loop(t_shell *minishell)
 	
 	while (1)
 	{
-		line = readline("minishell->$ ");
+		line = readline("minishell %% ");
+		if (!line)
+			return ;
 		if (mini_parser(minishell, line))
 		{
-			printf("!!!miniparser return value [1]\n");
+			write(STDERR_FILENO, "Parser: malloc allocation error\n", 33);
 			free(line);
 			return ;
 		}
-		printf("!!!miniparser return value [0]\n");
 		free(line);
-		printf("[%s] [%s] [%p]\n", minishell->tocken->key, minishell->tocken->value, minishell->tocken->next);
 		if (!minishell->tocken->key)
 			return ;
 	}

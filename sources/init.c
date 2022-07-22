@@ -6,11 +6,29 @@
 /*   By: jgoldste <jgoldste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/17 20:32:49 by jgoldste          #+#    #+#             */
-/*   Updated: 2022/07/19 22:30:40 by jgoldste         ###   ########.fr       */
+/*   Updated: 2022/07/22 06:12:10 by jgoldste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
+
+t_mini	*increase_shlvl(t_mini *shlvl)
+{
+	int	level;
+
+	if (shlvl)
+	{
+		if (!shlvl->key || !shlvl->value)
+			return (NULL);
+		level = ft_atoi(shlvl->value);
+		free(shlvl->value);
+		shlvl->value = ft_itoa(level + 1);
+		if (!shlvl->value)
+			return (NULL);
+		return(shlvl);
+	}
+	return (NULL);
+}
 
 char	**save_path()
 {
@@ -20,19 +38,22 @@ char	**save_path()
 	path_str = getenv("PATH");
 	if (!path_str)
 	{
-		write(STDERR_FILENO, "PATH not specified\n", 20);
+		write(STDERR_FILENO, "PATH: not specified\n", 20);
 		return (NULL);
 	}
 	path_array = ft_split(path_str, ':');
 	if (!path_array)
+	{
+		write(STDERR_FILENO, "PATH: malloc allocation error\n", 31);
 		return (NULL);
+	}
 	return (path_array);
 }
 
-char	*find_list(t_mini *mini_env, char *key, size_t len)
+t_mini	*find_list(t_mini *mini_env, char *key, size_t len)
 {
 	t_mini	*fix;
-	char    *ptr;
+	t_mini	*ptr;
 
 	fix = mini_env;
 	while (mini_env)
@@ -41,7 +62,7 @@ char	*find_list(t_mini *mini_env, char *key, size_t len)
 		{
 			if (!ft_strncmp(mini_env->key, key, len))
 			{
-				ptr = mini_env->value;
+				ptr = mini_env;
 				mini_env = fix;
 				return (ptr);
 			}
@@ -65,6 +86,7 @@ t_shell	*init_minishell(t_mini *mini_env, char **path_array)
 	minishell->mini_pwd = find_list(mini_env, "PWD", 3);
 	minishell->mini_oldpwd = find_list(mini_env, "OLDPWD", 6);
 	minishell->mini_home = find_list(mini_env, "HOME", 4);
-	minishell->mini_shlvl = find_list(mini_env, "SHLVL", 5);
+	minishell->mini_shlvl = increase_shlvl(find_list(mini_env, "SHLVL", 5));
+	minishell->hist_file = get_hist_file_name(minishell);
 	return (minishell);
 }
