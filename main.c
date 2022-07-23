@@ -32,9 +32,12 @@ int	main(int argc, char **argv, char **env)
 		return (init_error(NULL, mini_env, (void **)path_array, 2)
 			+ EXIT_FAILURE);
 	if (!minishell->mini_pwd || !minishell->mini_oldpwd
-		|| !minishell->mini_home || !minishell->mini_shlvl
-		|| !minishell->hist_file)
-		return (init_error(minishell, NULL, NULL, 3));
+		|| !minishell->mini_home)
+		return (init_error(minishell, NULL, NULL, 3) + EXIT_FAILURE);
+	if (!minishell->mini_shlvl)
+		return(init_error(minishell, NULL, NULL, 4) + EXIT_FAILURE);
+	if (!minishell->hist_file)
+		return(init_error(minishell, NULL, NULL, 5) + EXIT_FAILURE);
 	print_env(minishell->mini_env);
 	printf("\nHISTORY_FILE_NAME = [%s]\n", minishell->hist_file);
 	// read_loop(minishell);

@@ -20,6 +20,10 @@ int	init_error(t_shell *shell, t_mini *list, void **array, int err)
 		write(STDERR_FILENO, "Environment init: malloc allocation error\n", 43);
 	else if (err == 3)
 		write(STDERR_FILENO, "Environment init: directories not found\n", 41);
+	else if (err == 4)
+		write(STDERR_FILENO, "Environment init: shell level error\n", 37);
+	else if (err == 5)
+		write(STDERR_FILENO, "Environment init: history file error\n", 38);
 	if (shell)
 		return (free_minishell(shell));
 	if (array)

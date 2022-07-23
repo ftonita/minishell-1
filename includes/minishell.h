@@ -16,6 +16,7 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include "libft.h"
+# include "constants.h"
 # include <readline/readline.h>
 # include <readline/history.h>
 
@@ -34,8 +35,8 @@ typedef struct s_shell
 	t_mini	*mini_oldpwd;
 	t_mini	*mini_home;
 	t_mini	*mini_shlvl;
-	char	*hist_file;
 	char	**path_array;
+	char	*hist_file;
 }	t_shell;
 
 //init.c

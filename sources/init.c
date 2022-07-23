@@ -35,7 +35,7 @@ char	**save_path()
 	char	*path_str;
 	char	**path_array;
 
-	path_str = getenv("PATH");
+	path_str = getenv(PATH);
 	if (!path_str)
 	{
 		write(STDERR_FILENO, "PATH: not specified\n", 20);
@@ -83,10 +83,10 @@ t_shell	*init_minishell(t_mini *mini_env, char **path_array)
 	minishell->tocken = NULL;
 	minishell->mini_env = mini_env;
 	minishell->path_array = path_array;
-	minishell->mini_pwd = find_list(mini_env, "PWD", 3);
-	minishell->mini_oldpwd = find_list(mini_env, "OLDPWD", 6);
-	minishell->mini_home = find_list(mini_env, "HOME", 4);
-	minishell->mini_shlvl = increase_shlvl(find_list(mini_env, "SHLVL", 5));
+	minishell->mini_pwd = find_list(mini_env, PWD, 3);
+	minishell->mini_oldpwd = find_list(mini_env, OLD_PWD, 6);
+	minishell->mini_home = find_list(mini_env, HOME, 4);
+	minishell->mini_shlvl = increase_shlvl(find_list(mini_env, SH_LVL, 5));
 	minishell->hist_file = get_hist_file_name(minishell);
 	return (minishell);
 }

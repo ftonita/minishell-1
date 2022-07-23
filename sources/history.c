@@ -14,7 +14,17 @@
 
 char	*get_hist_file_name(t_shell *minishell)
 {
+	char	*path;
+	char	*filename;
+	
 	if (!minishell->mini_shlvl || !minishell->mini_home)
 		return (NULL);
-	return ("HISTORY");
+	path = ft_strjoin(minishell->mini_home->value, HIST_FILE);
+	if (!path)
+		return (NULL);
+	filename = ft_strjoin(path, minishell->mini_shlvl->value);
+	free(path);
+	if (!filename)
+		return (NULL);
+	return (filename);
 }

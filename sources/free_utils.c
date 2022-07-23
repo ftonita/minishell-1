@@ -52,6 +52,8 @@ int	free_minishell(t_shell *minishell)
 			free_mini_list(minishell->mini_env);
 		if (minishell->path_array)
 			free_array((void **)minishell->path_array);
+		if (minishell->hist_file)
+			free(minishell->hist_file);
 		free(minishell);
 		minishell = NULL;
 	}
