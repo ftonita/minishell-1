@@ -6,7 +6,7 @@
 /*   By: jgoldste <jgoldste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/17 20:32:49 by jgoldste          #+#    #+#             */
-/*   Updated: 2022/07/22 06:12:10 by jgoldste         ###   ########.fr       */
+/*   Updated: 2022/07/25 22:14:08 by jgoldste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,23 +30,19 @@ t_mini	*increase_shlvl(t_mini *shlvl)
 	return (NULL);
 }
 
-char	**save_path()
+char	**save_path(int argc, char **argv)
 {
 	char	*path_str;
 	char	**path_array;
 
-	path_str = getenv(PATH);
+	(void)argc;
+	(void)argv;
+		path_str = getenv(PATH);
 	if (!path_str)
-	{
-		write(STDERR_FILENO, "PATH: not specified\n", 20);
 		return (NULL);
-	}
 	path_array = ft_split(path_str, ':');
 	if (!path_array)
-	{
-		write(STDERR_FILENO, "PATH: malloc allocation error\n", 31);
 		return (NULL);
-	}
 	return (path_array);
 }
 
@@ -73,7 +69,7 @@ t_mini	*find_list(t_mini *mini_env, char *key, size_t len)
 	return (NULL);
 }
 
-t_shell	*init_minishell(t_mini *mini_env, char **path_array)
+t_shell	*init_minishell(int argc, char **argv, char **env)
 {
 	t_shell	*minishell;
 
@@ -81,12 +77,13 @@ t_shell	*init_minishell(t_mini *mini_env, char **path_array)
 	if (!minishell)
 		return (NULL);
 	minishell->tocken = NULL;
-	minishell->mini_env = mini_env;
-	minishell->path_array = path_array;
-	minishell->mini_pwd = find_list(mini_env, PWD, 3);
-	minishell->mini_oldpwd = find_list(mini_env, OLD_PWD, 6);
-	minishell->mini_home = find_list(mini_env, HOME, 4);
-	minishell->mini_shlvl = increase_shlvl(find_list(mini_env, SH_LVL, 5));
+	minishell->mini_env = save_env(env);
+	minishell->path_array = save_path(argc, argv);
+	minishell->mini_pwd = find_list(minishell->mini_env, PWD, 3);
+	minishell->mini_oldpwd = find_list(minishell->mini_env, OLD_PWD, 6);
+	minishell->mini_home = find_list(minishell->mini_env, HOME, 4);
+	minishell->mini_shlvl
+		= increase_shlvl(find_list(minishell->mini_env, SH_LVL, 5));
 	minishell->hist_file = get_hist_file_name(minishell);
 	return (minishell);
 }
