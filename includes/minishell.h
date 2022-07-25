@@ -6,7 +6,7 @@
 /*   By: jgoldste <jgoldste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 15:56:11 by jgoldste          #+#    #+#             */
-/*   Updated: 2022/07/25 22:11:26 by jgoldste         ###   ########.fr       */
+/*   Updated: 2022/07/25 22:27:05 by jgoldste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,6 @@ int		init_error(t_shell *shell, int err);
 
 //parser.c
 void	read_loop(t_shell *minishell);
-int		mini_parser(t_shell *minishell, char *line);
+void	mini_parser(t_shell *minishell, char *line);
 
 #endif

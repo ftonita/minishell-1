@@ -6,7 +6,7 @@
 /*   By: jgoldste <jgoldste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/25 22:11:37 by jgoldste          #+#    #+#             */
-/*   Updated: 2022/07/25 22:11:50 by jgoldste         ###   ########.fr       */
+/*   Updated: 2022/07/25 22:59:58 by jgoldste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,5 +20,7 @@
 # define HOME "HOME"
 
 # define HIST_FILE "/.m_shell_hist_shlvl_"
+
+# define SPACE " "
 
 #endif

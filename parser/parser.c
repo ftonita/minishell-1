@@ -6,32 +6,31 @@
 /*   By: jgoldste <jgoldste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/19 23:12:25 by jgoldste          #+#    #+#             */
-/*   Updated: 2022/07/22 04:15:16 by jgoldste         ###   ########.fr       */
+/*   Updated: 2022/07/25 23:26:30 by jgoldste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
 
-int mini_parser(t_shell *minishell, char *line)
+void	mini_parser(t_shell *minishell, char *line)
 {
-	char	**tocken_arr;
-	t_mini	*node;
+	char	**buff;
+	t_mini	*buff_t;
 
-	tocken_arr = ft_split(line, ' ');
-	if (!tocken_arr)
-		return (1);
-	node = (t_mini *)malloc(sizeof(t_mini));
-	if (!node)
+	buff_t = (t_mini *)malloc(sizeof(t_mini));
+	if (!buff_t)
+		return ;
+	buff = ft_split(line, SPACE);
+	if (!buff)
 	{
-		free_array ((void **)tocken_arr);
-		return (1);
+		free(buff_t);
+		return ;
 	}
-	node->key = tocken_arr[0];
-	node->value = tocken_arr[1];
-	node->next = NULL;
-	free((void **)tocken_arr);
-	minishell->tocken = node;
-	return (0);
+	buff_t->key = buff[0];
+	buff_t->value = buff[1];
+	buff_t->next = NULL;
+	free(buff);
+	minishell->tocken = buff_t;	
 }
 
 void	read_loop(t_shell *minishell)
@@ -40,17 +39,17 @@ void	read_loop(t_shell *minishell)
 	
 	while (1)
 	{
-		line = readline("minishell %% ");
+		line = readline("minishell % ");
 		if (!line)
-			return ;
-		if (mini_parser(minishell, line))
-		{
-			write(STDERR_FILENO, "Parser: malloc allocation error\n", 33);
-			free(line);
-			return ;
-		}
+			exit (EXIT_FAILURE);
+		mini_parser(minishell, line);
 		free(line);
-		if (!minishell->tocken->key)
-			return ;
+		free_mini_list(minishell->tocken);
+		minishell->tocken = NULL;
+		printf("tocken address = [%p]\n", minishell->tocken);
+		if (!minishell->tocken)
+			exit (EXIT_FAILURE);
+		printf("[%s] [%s]\n", minishell->tocken->key, minishell->tocken->value);
+		free_mini_list(minishell->tocken);
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: jgoldste <jgoldste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 15:55:28 by jgoldste          #+#    #+#             */
-/*   Updated: 2022/07/25 22:11:02 by jgoldste         ###   ########.fr       */
+/*   Updated: 2022/07/25 22:24:19 by jgoldste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,8 @@ int	main(int argc, char **argv, char **env)
 		return (init_error(minishell, 5) + EXIT_FAILURE);
 	if (!minishell->hist_file)
 		return (init_error(minishell, 6) + EXIT_FAILURE);
-	print_env(minishell->mini_env);
-	printf("\nHISTORY_FILE_NAME=[%s]\n", minishell->hist_file);
-	// read_loop(minishell);
+	read_loop(minishell);
+	if (!minishell->tocken)
+		return (init_error(minishell, 7) + EXIT_FAILURE);
 	return (free_minishell(minishell));
 }

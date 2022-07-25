@@ -6,7 +6,7 @@
 /*   By: jgoldste <jgoldste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/15 19:03:32 by jgoldste          #+#    #+#             */
-/*   Updated: 2022/07/25 22:13:10 by jgoldste         ###   ########.fr       */
+/*   Updated: 2022/07/25 22:22:25 by jgoldste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ int	init_error(t_shell *shell, int err)
 		write(STDERR_FILENO, "Environment init: shell level error\n", 37);
 	else if (err == 6)
 		write(STDERR_FILENO, "Environment init: history file error\n", 38);
+	else if (err == 7)
+		write(STDERR_FILENO, "Parser: readline / tocken creation error\n", 42);
 	if (shell)
 		return (free_minishell(shell));
 	return (0);
